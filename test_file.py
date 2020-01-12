@@ -27,7 +27,10 @@ print("\nPeek Head and Tail")
 test_list.peek()
 
 # current tests
-print(f"\nLinked List contains value: {test_list.containsNodeWithValue(10)}")
+# test_list.removeNodeWithValue(5)
+# test_list.removeNodeWithValue(1)
+# test_list.removeNodeWithValue(7)
+# test_list.removeNodeWithValue(3)
 
 # testing output after any changes
 print("\nView Current List")

@@ -1,12 +1,10 @@
 class Node:
-
     def __init__(self, value):
         self.value = value
         self.prev = None
         self.next = None
 
 class DoublyLinkedList:
-    
     def __init__(self):
         self.head = None
         self.tail = None
@@ -20,21 +18,19 @@ class DoublyLinkedList:
             self.tail = node
             node.prev = None
             node.next = None
-            
         else:
             node.next = None
             node.prev = self.tail
             self.tail.next = node
             self.tail = node
-            
-    # easily view list for testing purposes    
+               
     def viewList(self):
         node = self.head 
         
         while node != None:
             print(node.value)
             node = node.next
-    
+
     def peek(self):
         print(f"Head: {self.head.value}\nTail: {self.tail.value}")
         
@@ -51,6 +47,7 @@ class DoublyLinkedList:
         else:  
             node.prev.next = node.next
             node.next.prev = node.prev
+
         node.next = None
         node.prev = None
     
@@ -79,10 +76,18 @@ class DoublyLinkedList:
     
     def containsNodeWithValue(self, value):
         node = self.head
+
         while node != None and node.value != value:
             node = node.next
         return node != None
     
     def removeNodeWithValue(self, value):
-        pass
+        node = self.head
+
+        while node != None and node.value != value:
+            node = node.next
+        if node == None:
+            return
+        else:
+            self.remove(node)
 
