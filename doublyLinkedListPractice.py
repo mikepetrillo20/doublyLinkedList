@@ -67,8 +67,29 @@ class DoublyLinkedList:
             node.next.prev = nodeToAdd
             node.next = nodeToAdd
     
-    def replace(self, node, nodeToAdd):
-        pass
+    def switch(self, nodeOne, nodeTwo):
+        # save nodeTwo next and prev
+        tempNext = nodeTwo.next
+        tempPrev = nodeTwo.prev
+
+        # change nodeTwos prev and next node to point to nodeOne
+        nodeTwo.prev.next = nodeOne
+        nodeTwo.next.prev = nodeOne
+
+        # move nodeTwo to nodeOne
+        nodeTwo.next = nodeOne.next
+        nodeTwo.prev = nodeOne.prev
+
+        # change nodeOne's prev and next nodes to point to nodeTwo
+        nodeOne.prev.next = nodeTwo
+        nodeOne.next.prev = nodeTwo
+
+        # move nodeOne to nodeTwos old location
+        nodeOne.next = tempNext
+        nodeOne.prev = tempPrev
+
+
+
     
     def containsNodeWithValue(self, value):
         pass
