@@ -78,7 +78,10 @@ class DoublyLinkedList:
             node.next = nodeToAdd
     
     def containsNodeWithValue(self, value):
-        pass
+        node = self.head
+        while node != None and node.value != value:
+            node = node.next
+        return node != None
     
     def removeNodeWithValue(self, value):
         pass
