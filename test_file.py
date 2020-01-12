@@ -20,8 +20,6 @@ test_list.add(six)
 seven = Node(7)
 test_list.add(seven)
 
-
-
 # # testing output before any changes
 print("\nView Current List")
 test_list.viewList()
@@ -29,6 +27,9 @@ print("\nPeek Head and Tail")
 test_list.peek()
 
 # current tests
+test_list.remove(four)
+test_list.remove(one)
+test_list.remove(seven)
 
 # testing output after any changes
 print("\nView Current List")

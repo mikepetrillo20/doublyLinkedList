@@ -39,8 +39,18 @@ class DoublyLinkedList:
         print(f"Head: {self.head.value}\nTail: {self.tail.value}")
         
     def remove(self, node):
-        node.prev.next = node.next
-        node.next.prev = node.prev
+        if node == self.head and node == self.tail:
+            self.head = None
+            self.tail = None
+        elif node == self.head:
+            self.head = node.next
+            node.next.prev = None
+        elif node == self.tail:
+            self.tail = node.prev
+            node.prev.next = None
+        else:  
+            node.prev.next = node.next
+            node.next.prev = node.prev
         node.next = None
         node.prev = None
     
@@ -66,30 +76,6 @@ class DoublyLinkedList:
         else:
             node.next.prev = nodeToAdd
             node.next = nodeToAdd
-    
-    def switch(self, nodeOne, nodeTwo):
-        # save nodeTwo next and prev
-        tempNext = nodeTwo.next
-        tempPrev = nodeTwo.prev
-
-        # change nodeTwos prev and next node to point to nodeOne
-        nodeTwo.prev.next = nodeOne
-        nodeTwo.next.prev = nodeOne
-
-        # move nodeTwo to nodeOne
-        nodeTwo.next = nodeOne.next
-        nodeTwo.prev = nodeOne.prev
-
-        # change nodeOne's prev and next nodes to point to nodeTwo
-        nodeOne.prev.next = nodeTwo
-        nodeOne.next.prev = nodeTwo
-
-        # move nodeOne to nodeTwos old location
-        nodeOne.next = tempNext
-        nodeOne.prev = tempPrev
-
-
-
     
     def containsNodeWithValue(self, value):
         pass
