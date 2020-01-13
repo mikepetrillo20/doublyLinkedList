@@ -33,10 +33,8 @@ class DoublyLinkedList:
 
     def peek(self):
         print(f"Head: {self.head.value}\nTail: {self.tail.value}")
-<<<<<<< HEAD
         return (self.head.value, self.tail.value)
-=======
->>>>>>> aa76ea2685c9d42bf4cffaf37a7047b13458348e
+
         
     def remove(self, node):
         if node == self.head and node == self.tail:
