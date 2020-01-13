@@ -4,18 +4,30 @@ from doublyLinkedList import Node, DoublyLinkedList
 class TestSequenceFunctions(unittest.TestCase):
 
     def setUp(self):
-        test_list = DoublyLinkedList()
-        one = Node(1)
-        two = Node(2)
-        three = Node(3)
-        four = Node(4)
-        five = Node(5)
-        test_list.add(one)
-        test_list.add(two)
-        test_list.add(three)
+        self.test_list = DoublyLinkedList()
+        self.one = Node(1)
+        self.two = Node(2)
+        self.three = Node(3)
+        self.four = Node(4)
+        self.five = Node(5)
+        self.test_list.add(self.one)
+        self.test_list.add(self.two)
+        self.test_list.add(self.three)
 
     def tearDown(self):
         pass
+
+    def test__len__(self):
+        self.assertEqual(len(self.test_list), 3)
+        self.assertNotEqual(len(self.test_list), 0)
+        self.assertNotEqual(len(self.test_list), 10)
+        self.assertNotEqual(len(self.test_list), 99)
+
+        self.test_list.add(self.four)
+        self.assertEqual(len(self.test_list), 4)
+
+        self.test_list.remove(self.four)
+        self.assertEqual(len(self.test_list), 3)
 
     def test_add(self):
         pass
@@ -36,7 +48,12 @@ class TestSequenceFunctions(unittest.TestCase):
         pass
 
     def test_containsNodeWithValue(self):
-        self.assertTrue(test_list.containsNodeWithValue(1), True)
+        self.assertTrue(self.test_list.containsNodeWithValue(1))
+        self.assertTrue(self.test_list.containsNodeWithValue(2))
+        self.assertTrue(self.test_list.containsNodeWithValue(3))
+        self.assertFalse(self.test_list.containsNodeWithValue(99))
+        self.assertFalse(self.test_list.containsNodeWithValue(-99))
+        self.assertFalse(self.test_list.containsNodeWithValue(0))
     
     def test_removeNodeWithValue(self):
         pass

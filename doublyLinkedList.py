@@ -8,6 +8,17 @@ class DoublyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+
+    def __len__(self):
+        length = 0
+        node = self.head
+
+        while node != None:
+            length += 1
+            node = node.next
+            
+        return length
+
      
     # adds node to end of linked list
     def add(self, node):
