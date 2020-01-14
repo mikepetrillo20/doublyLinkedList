@@ -19,7 +19,16 @@ class DoublyLinkedList:
             
         return length
 
-     
+    def __repr__(self):
+        print_list = []
+        node = self.head 
+        
+        while node != None:
+            print_list.append(node.value)
+            node = node.next
+
+        return f"Contains: {print_list}"
+
     # adds node to end of linked list
     def add(self, node):
         
@@ -45,7 +54,6 @@ class DoublyLinkedList:
     def peek(self):
         print(f"Head: {self.head.value}\nTail: {self.tail.value}")
         return (self.head.value, self.tail.value)
-
         
     def remove(self, node):
         if node == self.head and node == self.tail:
@@ -104,3 +112,18 @@ class DoublyLinkedList:
         else:
             self.remove(node)
 
+
+
+'''
+# this code is only here to test my __repr__ method, I will remove once fixed
+test1 = DoublyLinkedList()
+one = Node(1)
+two = Node(2)
+three = Node(3)
+
+test1.add(one)
+test1.add(two)
+test1.add(three)
+
+print(test1)
+'''

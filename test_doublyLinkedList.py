@@ -28,11 +28,12 @@ class TestSequenceFunctions(unittest.TestCase):
 
         self.test_list.remove(self.four)
         self.assertEqual(len(self.test_list), 3)
+    
+    def test__repr__(self):
+        self.assertEqual(print(self.test_list), "Contains: [1, 2, 3]")
+        # TODO: Fix above test
 
     def test_add(self):
-        pass
-
-    def test_viewList(self):
         pass
     
     def test_peek(self):
