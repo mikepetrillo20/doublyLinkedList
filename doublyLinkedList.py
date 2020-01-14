@@ -51,7 +51,6 @@ class DoublyLinkedList:
             node = node.next
 
     def peek(self):
-        print(f"Head: {self.head.value}\nTail: {self.tail.value}")
         return (self.head.value, self.tail.value)
         
     def remove(self, node):

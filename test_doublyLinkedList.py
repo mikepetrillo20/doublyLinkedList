@@ -36,10 +36,26 @@ class TestSequenceFunctions(unittest.TestCase):
         self.assertEqual(repr(self.test_list), "Contains: [1, 2, 3]")
 
     def test_add(self):
-        pass
+        self.assertEqual(len(self.test_list), 3)
+        self.test_list.add(self.four)
+        self.assertEqual(len(self.test_list), 4)
+        self.test_list.add(self.five)
+        self.assertEqual(len(self.test_list), 5)
+        self.test_list.remove(self.five)
+        self.assertEqual(len(self.test_list), 4)
+        self.test_list.remove(self.four)
+        self.assertEqual(len(self.test_list), 3)
     
     def test_peek(self):
-        pass
+        self.assertEqual((self.test_list.head.value, self.test_list.tail.value), self.test_list.peek())
+        self.test_list.remove(self.one)                 
+        self.assertEqual((self.test_list.head.value, self.test_list.tail.value), self.test_list.peek())
+        self.test_list.remove(self.three)                 
+        self.assertEqual((self.test_list.head.value, self.test_list.tail.value), self.test_list.peek())
+        self.test_list.add(self.one)
+        self.assertEqual((self.test_list.head.value, self.test_list.tail.value), self.test_list.peek())
+        self.test_list.add(self.three)
+        self.assertEqual((self.test_list.head.value, self.test_list.tail.value), self.test_list.peek())
 
     def test_remove(self):
         pass
