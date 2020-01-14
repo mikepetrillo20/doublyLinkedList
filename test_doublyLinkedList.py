@@ -58,7 +58,17 @@ class TestSequenceFunctions(unittest.TestCase):
         self.assertEqual((self.test_list.head.value, self.test_list.tail.value), self.test_list.peek())
 
     def test_remove(self):
-        pass
+        self.test_list.remove(self.one)
+        self.assertEqual(len(self.test_list), 2)
+        self.test_list.remove(self.two)
+        self.assertEqual(len(self.test_list), 1)
+        self.test_list.remove(self.three)
+        self.assertEqual(len(self.test_list), 0)
+        self.test_list.add(self.one)
+        self.test_list.add(self.two)
+        self.test_list.add(self.three)
+
+
 
     def test_addBefore(self):
         pass
