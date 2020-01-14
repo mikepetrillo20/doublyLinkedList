@@ -14,9 +14,6 @@ class TestSequenceFunctions(unittest.TestCase):
         self.test_list.add(self.two)
         self.test_list.add(self.three)
 
-    def tearDown(self):
-        pass
-
     def test__len__(self):
         self.assertEqual(len(self.test_list), 3)
         self.assertNotEqual(len(self.test_list), 0)
@@ -30,8 +27,13 @@ class TestSequenceFunctions(unittest.TestCase):
         self.assertEqual(len(self.test_list), 3)
     
     def test__repr__(self):
-        self.assertEqual(print(self.test_list), "Contains: [1, 2, 3]")
-        # TODO: Fix above test
+        self.assertEqual(repr(self.test_list), "Contains: [1, 2, 3]")
+        
+        self.test_list.add(self.four)
+        self.assertEqual(repr(self.test_list), "Contains: [1, 2, 3, 4]")
+
+        self.test_list.remove(self.four)
+        self.assertEqual(repr(self.test_list), "Contains: [1, 2, 3]")
 
     def test_add(self):
         pass

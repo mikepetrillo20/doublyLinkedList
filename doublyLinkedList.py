@@ -31,7 +31,6 @@ class DoublyLinkedList:
 
     # adds node to end of linked list
     def add(self, node):
-        
         # checks to see if any nodes exist yet
         if self.head == None and self.tail == None:
             self.head = node
@@ -113,17 +112,6 @@ class DoublyLinkedList:
             self.remove(node)
 
 
-
-'''
-# this code is only here to test my __repr__ method, I will remove once fixed
-test1 = DoublyLinkedList()
-one = Node(1)
-two = Node(2)
-three = Node(3)
-
-test1.add(one)
-test1.add(two)
-test1.add(three)
-
-print(test1)
-'''
+if __name__ == "__main__":
+    # TODO not needed yet, but helpful when testing methods
+    pass
