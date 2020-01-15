@@ -81,7 +81,6 @@ class DoublyLinkedList:
             node.prev.next = nodeToAdd
             node.prev = nodeToAdd
             
-    
     def addAfter(self, node, nodeToAdd):
         nodeToAdd.next = node.next
         nodeToAdd.prev = node
@@ -109,7 +108,6 @@ class DoublyLinkedList:
             return
         else:
             self.remove(node)
-
 
 if __name__ == "__main__":
     # TODO not needed yet, but helpful when testing methods
