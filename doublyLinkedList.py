@@ -1,9 +1,12 @@
+
+# Node class to be used by multiple data structures
 class Node:
     def __init__(self, value):
         self.value = value
         self.prev = None
         self.next = None
 
+# Doubly Linked List class that will be used in future projects
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
@@ -109,6 +112,10 @@ class DoublyLinkedList:
         else:
             self.remove(node)
 
-if __name__ == "__main__":
-    # TODO not needed yet, but helpful when testing methods
+# Stack class in development
+class Stack:
+    pass
+
+# Queue class in development
+class Queue:
     pass
