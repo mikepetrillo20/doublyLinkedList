@@ -112,10 +112,3 @@ class DoublyLinkedList:
         else:
             self.remove(node)
 
-# Stack class in development
-class Stack:
-    pass
-
-# Queue class in development
-class Queue:
-    pass
